@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI GIF Maker settings</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body { font-size: 14px; }
+  main { max-width: 640px; margin: 0 auto; padding: 36px 24px 56px; }
+  header { margin-bottom: 22px; }
+  .brand img { width: 40px; height: 40px; border-radius: 10px; }
+  .brand b { font-size: 20px; }
+  section { margin-bottom: 16px; }
+  h2 { font-size: 15px; margin: 0 0 4px; }
+  .lead { margin: 0 0 12px; font-size: 13px; }
+  .keyrow { display: flex; gap: 8px; }
+  .keyrow input { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .note { font-size: 12.5px; }
+  .note p { margin: 0 0 6px; }
+</style>
+</head>
+<body>
+<main>
+  <header class="brand">
+    <img src="icons/icon128.png" alt="">
+    <div><b>AI GIF Maker</b><small>Turn text into animated GIFs. Native GIF generation, no video conversion.</small></div>
+  </header>
+  <section class="card">
+    <h2>API key</h2>
+    <p class="lead muted">Create a key on your AI GIF Maker account and paste it here. It is stored only in this browser.</p>
+    <div class="keyrow">
+      <input type="password" id="key" autocomplete="off" spellcheck="false" placeholder="sk-…">
+      <button class="btn ghost" id="toggle">Show</button>
+    </div>
+    <div class="actions">
+      <button class="btn" id="save">Save and check</button>
+      <a class="btn ghost" id="getkey" target="_blank" rel="noopener">Get a key on aigifmaker.ai</a>
+    </div>
+    <div class="msg" id="keymsg"></div>
+  </section>
+  <section class="note muted">
+    <p>One GIF costs 1 credit on your AI GIF Maker account, the same as on the website. Every new account gets one free GIF (with an aigifmaker.ai badge), and a failed GIF gives its credit back.</p>
+    <p>The extension sends only the text you chose (selected, or typed in the popup) and your API key, and only to aigifmaker.ai.</p>
+    <p><a href="#" id="site">aigifmaker.ai</a> · <a href="#" id="pricing">Pricing</a> · <a href="#" id="privacy">Privacy policy</a></p>
+  </section>
+</main>
+<script type="module" src="options.js"></script>
+</body>
+</html>

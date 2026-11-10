@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<style>
+  body { width: 360px; padding: 14px; overflow-x: hidden; }
+  header { margin-bottom: 12px; }
+  #credits { font-size: 11px; color: var(--muted); text-align: right; line-height: 1.3; }
+  #credits b { color: var(--ink); font-size: 13px; }
+  .nokey { margin-bottom: 12px; }
+  .nokey p { margin: 0 0 10px; }
+  .compose .row { margin-top: 10px; }
+  .hint { font-size: 11.5px; margin: 10px 2px 0; }
+  h2 { font-size: 12px; margin: 16px 2px 6px; color: var(--muted); }
+  #jobs { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; max-height: 260px; overflow-y: auto; }
+  #jobs li { min-width: 0; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; }
+  #jobs .p { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #jobs .meta { display: flex; align-items: center; gap: 6px; margin-top: 4px; font-size: 11px; color: var(--muted); }
+  #jobs img { display: block; max-width: 100%; border-radius: 8px; margin-top: 6px; }
+  #jobs .err { color: var(--bad); font-size: 11.5px; margin-top: 3px; }
+  footer { display: flex; gap: 12px; margin-top: 12px; font-size: 12px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+  <header class="row">
+    <div class="brand">
+      <img src="icons/icon48.png" alt="">
+      <div><b>AI GIF Maker</b><small>Type it, get an animated GIF</small></div>
+    </div>
+    <div class="spacer"></div>
+    <div id="credits"></div>
+  </header>
+  <div class="card nokey" id="nokey" hidden>
+    <p>Paste your AI GIF Maker API key to start.</p>
+    <button class="btn block" id="openOptions">Set API key</button>
+  </div>
+  <div class="card compose">
+    <textarea id="prompt" rows="4" placeholder="a corgi in sunglasses dancing on a beach, looping"></textarea>
+    <div class="row"><div class="spacer"></div><button class="btn" id="go">Make GIF</button></div>
+    <div class="msg" id="msg"></div>
+  </div>
+  <p class="hint muted">Or select text on any page, right-click and choose "Make a GIF".</p>
+  <div class="row"><h2>Recent GIFs</h2><div class="spacer"></div><button class="btn ghost small" id="clear" hidden>Clear finished</button></div>
+  <ul id="jobs"></ul>
+  <div id="empty" class="muted">None yet.</div>
+  <footer>
+    <a href="#" id="settings">Settings</a>
+    <a href="#" id="site">aigifmaker.ai</a>
+    <a href="#" id="pricing">Pricing</a>
+  </footer>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

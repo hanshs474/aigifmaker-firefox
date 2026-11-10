@@ -1,0 +1,5 @@
+*.zip
+.DS_Store
+web-ext-artifacts/
+build/
+.amo-upload-uuid

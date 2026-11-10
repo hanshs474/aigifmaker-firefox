@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "AI GIF Maker: Text to GIF",
+  "short_name": "AI GIF Maker",
+  "version": "1.0.0",
+  "description": "Turn text into animated GIFs with AI GIF Maker. Select text, right-click, get a GIF. Runs on your aigifmaker.ai API key.",
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "permissions": ["contextMenus", "storage", "notifications", "alarms"],
+  "host_permissions": ["https://aigifmaker.ai/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI GIF Maker",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "options_ui": { "page": "options.html", "open_in_tab": true },
+  "homepage_url": "https://aigifmaker.ai/?utm_source=chrome&utm_medium=extension",
+  "minimum_chrome_version": "120"
+}
